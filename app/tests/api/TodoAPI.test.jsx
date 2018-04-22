@@ -6,6 +6,7 @@ describe('TodoAPI', () => {
   beforeEach(() => {
     localStorage.removeItem('todos');
   });
+
   it('should exist', () => {
     expect(TodoAPI).toExist();
   });
@@ -41,29 +42,29 @@ describe('TodoAPI', () => {
     it('should return todo if valid array in localstorage', () => {
       var todos = [{
         id: 23,
-        text: 'test all files',
+        test: 'test all files',
         completed: false
       }];
-      localStorage.setItem('todos', JSON.stringify(todos));
 
+      localStorage.setItem('todos', JSON.stringify(todos));
       var actualTodos = TodoAPI.getTodos();
 
       expect(actualTodos).toEqual(todos);
-    })
+    });
   });
 
   describe('filterTodos', () => {
     var todos = [{
       id: 1,
-      text: 'some text here',
+      text: 'Some text here',
       completed: true
-    }, {
+    },{
       id: 2,
-      text: 'other text here',
+      text: 'Other text here',
       completed: false
-    }, {
+    },{
       id: 3,
-      text: 'some text here',
+      text: 'Some text here',
       completed: true
     }];
 
@@ -72,7 +73,7 @@ describe('TodoAPI', () => {
       expect(filteredTodos.length).toBe(3);
     });
 
-    it('should return non-completed items if showCompleted is false', () => {
+    it('should return non-completed todos when showCompleted is false', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, false, '');
       expect(filteredTodos.length).toBe(1);
     });

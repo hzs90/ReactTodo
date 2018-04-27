@@ -8,16 +8,17 @@ module.exports = {
     }
   },
   getTodos: function () {
-    var stringTodos = localStorage.getItem('todos');
-    var todos = [];
+    // var stringTodos = localStorage.getItem('todos');
+    // var todos = [];
+    //
+    //try {
+    //  todos = JSON.parse(stringTodos);
+    //} catch (e) {
+    //
+    //}
 
-    try {
-      todos = JSON.parse(stringTodos);
-    } catch (e) {
-
-    }
-
-    return $.isArray(todos) ? todos : [];
+    //return $.isArray(todos) ? todos : [];
+    return {}; //temporary
   },
   filterTodos: function (todos, showCompleted, searchText) {
     var filteredTodos = todos;
